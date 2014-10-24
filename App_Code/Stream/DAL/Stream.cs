@@ -24,3 +24,14 @@ namespace Stream.DAL
         public Nullable<int> streamTypeID { get; set; }
     }
 }
+namespace Stream.DAL
+{
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class StreamView
+    {
+        public int streamID { get; set; }
+        public Nullable<int> intNumberOfViews { get; set; }
+    }
+}

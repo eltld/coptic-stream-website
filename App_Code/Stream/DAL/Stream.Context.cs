@@ -26,5 +26,6 @@ namespace Stream.DAL
         }
     
         public DbSet<Stream> Streams { get; set; }
+        public DbSet<StreamView> StreamViews { get; set; }
     }
 }

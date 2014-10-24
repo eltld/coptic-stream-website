@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Script.Serialization;
 using System.Web.Script.Services;
 using System.Web.Services;
@@ -30,7 +31,7 @@ namespace Webservices
             JavaScriptSerializer js = new JavaScriptSerializer();
             Context.Response.Clear();
             Context.Response.ContentType = "application/json";
-            //Context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            Context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
             Context.Response.Write(js.Serialize(t));
         }
 
@@ -38,22 +39,24 @@ namespace Webservices
         {
             public string Message { get; set; }
         }
+
         [WebMethod]
-        public void StreamListByType()
+        public void StreamList()
         {
-            var streamList = new StreamData().GetStreamListByType();
+            var streamList = new StreamData().GetStreamList();
             JavaScriptSerializer js = new JavaScriptSerializer();
             Context.Response.Clear();
             Context.Response.ContentType = "application/json";
-            //Context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            Context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
             Context.Response.Write(js.Serialize(streamList));
         }
 
-        public class myTest
+        [WebMethod]
+        public string IncrementStreamViews(int streamID)
         {
-            public string name { get; set; }
-            public int ssn { get; set; }
+            new StreamData().StreamViewsCounter(streamID);
+            return "Added";
         }
-    
+
     }
 }
