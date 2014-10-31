@@ -20,6 +20,7 @@ namespace Stream.BLL
             using (StreamEntities db = new StreamEntities())
             {
                 return (from stream in db.Streams
+                        where stream.streamEnabled == true
                     select stream).ToList();
 
             }
