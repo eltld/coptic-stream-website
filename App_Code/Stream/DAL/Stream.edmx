@@ -4,10 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="minagabriel_copticStreamModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="minagabriel_copticStreamModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="minagabriel_copticStreamModelStoreContainer">
-          <EntitySet Name="Stream" EntityType="minagabriel_copticStreamModel.Store.Stream" store:Type="Tables" Schema="minagabriel" />
-          <EntitySet Name="StreamViews" EntityType="minagabriel_copticStreamModel.Store.StreamViews" store:Type="Tables" Schema="minagabriel" />
+          <EntitySet Name="Stream" EntityType="minagabriel_copticStreamModel.Store.Stream" store:Type="Tables" Schema="minagabriel" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="StreamViews" EntityType="minagabriel_copticStreamModel.Store.StreamViews" store:Type="Tables" Schema="minagabriel" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
         </EntityContainer>
         <EntityType Name="Stream">
           <Key>
@@ -32,7 +32,7 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="minagabriel_copticStreamModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="minagabriel_copticStreamModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityContainer Name="StreamEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Streams" EntityType="minagabriel_copticStreamModel.Stream" />
           <EntitySet Name="StreamViews" EntityType="minagabriel_copticStreamModel.StreamView" />
@@ -105,6 +105,6 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams />
   </Designer>
 </edmx:Edmx>
